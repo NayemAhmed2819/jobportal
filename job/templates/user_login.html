@@ -21,11 +21,14 @@
     <a href="{% url 'user_signup' %}" class="btn btn-primary" style="margin-top : 2% ; color : white ; background-color : green">Sign Up</a>
 </form>
 
-
 {% ifequal error "no" %}
 <script>
     alert("Login Successful!");
     window.location = ('{% url 'user_home' %}')
+{% ifequal error "no" %}
+<script>
+    alert("Login Successful!");
+    window.location = ('{% url 'user_home' %}');
 </script>
 {% endifequal %}
 
@@ -34,5 +37,9 @@
     alert("Invalid login credentials, Try again...");
 </script>
 {% endifequal %}
+
+
+<p class="text-center text-danger font-weight-bold">{{ error }}</p>
+
 
 {% endblock %}

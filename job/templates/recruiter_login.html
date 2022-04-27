@@ -20,6 +20,7 @@
     <a href="{% url 'recruiter_signup' %}" class="btn btn-primary" style="margin-top : 2% ; color : white ; background-color : green">Sign Up</a>
 </form>
 
+<<<<<<< Updated upstream
 {% ifequal error "no" %}
 <script>
     alert("Login Successful!");
@@ -38,5 +39,12 @@
     alert("Your Login Status is Still Pending");
 </script>
 {% endifequal %}
+=======
+
+<p class="text-center text-danger font-weight-bold">{{ error }}</p>
+
+
+
+>>>>>>> Stashed changes
 
 {% endblock %}

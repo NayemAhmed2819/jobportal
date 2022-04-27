@@ -33,6 +33,11 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'job',
+
+    "django_filters",
+    "widget_tweaks",
+
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

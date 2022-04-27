@@ -19,17 +19,8 @@
     <input type="submit" class="btn btn-primary" style="margin-top : 2% ; color : white ; background-color : green">
 </form>
 
-{% ifequal error "no" %}
-<script>
-    alert("Login Successful!");
-    window.location = ('{% url 'admin_home' %}')
-</script>
-{% endifequal %}
+<p class="text-center text-danger font-weight-bold">{{ error }}</p>
 
-{% ifequal error "yes" %}
-<script>
-    alert("Invalid login credentials, Try again...");
-</script>
-{% endifequal %}
+
 
 {% endblock %}

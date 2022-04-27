@@ -2,7 +2,6 @@
 
 {% block body %}
 
-
 {% include 'navigation.html' %}
 
 <marquee style="font-family : 'Monotype Corsiva' ; font-size : 25px ; color : white ; background : red">
@@ -25,6 +24,10 @@
 {% ifequal error "no" %}
 <script>
     alert("Login Successful!");
+    window.location = ('{% url 'user_home' %}')
+{% ifequal error "no" %}
+<script>
+    alert("Login Successful!");
     window.location = ('{% url 'user_home' %}');
 </script>
 {% endifequal %}
@@ -34,6 +37,7 @@
     alert("Invalid login credentials, Try again...");
 </script>
 {% endifequal %}
+
 
 <p class="text-center text-danger font-weight-bold">{{ error }}</p>
 

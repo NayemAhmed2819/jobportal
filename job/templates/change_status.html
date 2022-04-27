@@ -2,19 +2,23 @@
 
 {% block body %}
 
-{% include 'navigation.html' %}
+{% include 'admin_navigation.html' %}
 
 <marquee style="font-family : 'Monotype Corsiva' ; font-size : 25px ; color : white ; background : red">
-    Admin Login
+    Pending Recruiters
 </marquee>
 <hr>
+
 <form class="container mt-5" method="post">
     {% csrf_token %}
-    <label><b>Username</b></label>
-    <input type="text" class="form-control" name="uname" placeholder="Enter Username">
+    <label><b>Recruiter Name</b></label>
+    <input type="text" class="form-control" name="uname" value="{{recruiter.user.first_name}} {{recruiter.user.last_name}}">
 
-    <label><b>Password</b></label>
-    <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
+    <label><b>Status</b></label>
+    <select type="password" class="form-control" name="status">
+        <option value="Accept">Accept</option>
+        <option value="Reject">Reject</option>
+    </select>
 
     <input type="submit" class="btn btn-primary" style="margin-top : 2% ; color : white ; background-color : green">
 </form>
